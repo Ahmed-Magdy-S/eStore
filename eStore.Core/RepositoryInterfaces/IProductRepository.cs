@@ -2,15 +2,8 @@
 
 namespace eStore.Core.RepositoryInterfaces
 {
-    public interface IProductRepository
+    public interface IProductRepository : ICrudRepository<Product>
     {
-        Task<IReadOnlyList<Product>> GetProductsAsync();
-
-        Task<Product?> GetProductByIdAsync(int id);
-
-        Task<ProductBrand> GetProductBrandsAsync();
-
-        Task<ProductType> GetProductTypesAsync();
 
     }
 }
