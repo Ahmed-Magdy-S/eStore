@@ -4,9 +4,10 @@ namespace eStore.Core.Specifications;
 
 public abstract class BaseSpecification<T> : ISpecification<T>
 {
-    public Expression<Func<T, bool>> Criteria { get; }
+    public Expression<Func<T, bool>>? Criteria { get; }
     public List<Expression<Func<T, object>>> Includes { get; } = new ();
     
+    protected BaseSpecification(){}
     protected BaseSpecification(Expression<Func<T, bool>> criteria)
     {
         Criteria = criteria;

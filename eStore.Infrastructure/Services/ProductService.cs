@@ -1,6 +1,7 @@
 using eStore.Core.Entities;
 using eStore.Core.RepositoryInterfaces;
 using eStore.Core.ServiceInterfaces;
+using eStore.Core.Specifications;
 
 namespace eStore.Infrastructure.Services;
 
@@ -44,7 +45,8 @@ public class ProductService : IProductService
 
     public async Task<IReadOnlyList<Product>> GetAllProducts()
     {
-        return await _productRepository.ListAllAsync();
+        var spec = new ProductsWithTypesAndBrandsSpecification();
+        return await _productRepository.ListAsyncWithSpecification(spec);
     }
 
     public async Task<IReadOnlyList<ProductBrand>> GetAllProductBrands()

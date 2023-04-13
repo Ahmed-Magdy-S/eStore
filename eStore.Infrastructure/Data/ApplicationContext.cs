@@ -1,7 +1,5 @@
 ﻿using eStore.Core.Entities;
-using eStore.Infrastructure.Data.Config;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
 
 namespace eStore.Infrastructure.Data
 {
