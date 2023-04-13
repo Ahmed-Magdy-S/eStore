@@ -4,7 +4,7 @@ using eStore.Infrastructure.Data;
 
 namespace eStore.Infrastructure.Repositories;
 
-    public class ProductRepository : CrudRepository<Product>, IProductRepository
+    public class ProductRepository : SpecificationRepository<Product>,IProductRepository
     {
         public ProductRepository(ApplicationContext applicationContext) : base(applicationContext){}
     }

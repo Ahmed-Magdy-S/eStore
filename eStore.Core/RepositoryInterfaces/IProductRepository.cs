@@ -2,7 +2,7 @@
 
 namespace eStore.Core.RepositoryInterfaces
 {
-    public interface IProductRepository : ICrudRepository<Product>
+    public interface IProductRepository : ISpecificationRepository<Product>
     {
 
     }

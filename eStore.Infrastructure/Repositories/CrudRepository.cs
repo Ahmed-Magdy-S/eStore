@@ -7,20 +7,20 @@ namespace eStore.Infrastructure.Repositories;
 
 public class CrudRepository<T> : ICrudRepository<T> where T:BaseEntity
 {
-    private readonly ApplicationContext _context;
+    protected readonly ApplicationContext Context;
 
-    public CrudRepository(ApplicationContext context)
+    protected CrudRepository(ApplicationContext context)
     {
-        _context = context;
+        Context = context;
     }
 
     public async Task<T?> GetByIdAsync(int id)
     {
-        return await _context.Set<T>().FindAsync(id);
+        return await Context.Set<T>().FindAsync(id);
     }
 
     public async Task<IReadOnlyList<T>> ListAllAsync()
     {
-        return await _context.Set<T>().ToListAsync();
+        return await Context.Set<T>().ToListAsync();
     }
 }
